@@ -12,15 +12,15 @@ export class GameRepository {
 
   async findAll(): Promise<Game[]> {
     return this.gameRepository.find();
-  }
+  };
 
   async findById(id: number) {
     const gameFiltered = await this.gameRepository.findOneBy({ id });
     if (gameFiltered === null) {
       throw new GameDoesNotExistException();
-    }
+    };
     return gameFiltered;
-  }
+  };
 
   async create(game: Game) {
     const newGame = new Game();
@@ -33,7 +33,7 @@ export class GameRepository {
 
     await this.gameRepository.save(newGame);
     return newGame;
-  }
+  };
 
   async update(game: Game) {
     const gameFiltered = await this.findById(game.id);
@@ -45,10 +45,10 @@ export class GameRepository {
     gameFiltered.description = game.description;
     this.gameRepository.save(gameFiltered);
     return gameFiltered;
-  }
+  };
 
   async delete(id: number) {
     const gameFiltered = await this.findById(id);
     this.gameRepository.remove(gameFiltered);
-  }
-}
+  };
+};

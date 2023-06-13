@@ -10,10 +10,10 @@ export class UpdateGameUseCase {
   execute(game: Game) {
     if (!game.description || !game.console || !game.name || !game.price || !game.stock) {
       throw new RequiredFieldsException();
-    }
+    };
     if (game.price <= 0 || game.stock <= 0) {
       throw new RequiredFieldsException();
-    }
+    };
     return this.gameRepository.update(game);
-  }
-}
+  };
+};

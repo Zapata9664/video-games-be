@@ -9,25 +9,25 @@ export class GameController {
   @Post()
   createGame(@Body() game: Game) {
     return this.createGameUseCase.execute(game);
-  }
+  };
 
   @Get()
   async getGames() {
     return this.getGameUseCase.execute();
-  }
+  };
 
   @Get('/:id')
   async getGame(@Param('id') id: number) {
-    return this.getGameByIdUseCase.execute(id)
-  }
+    return this.getGameByIdUseCase.execute(id);
+  };
 
   @Put()
   async updateGame(@Body() game: Game) {
-    return this.updateGameUseCase.execute(game)
-  }
+    return this.updateGameUseCase.execute(game);
+  };
 
   @Delete('/:id')
   async deteleGame(@Param('id') id: number) {
-    return this.deleteGamesUseCase.execute(id)
-  }
-}
+    return this.deleteGamesUseCase.execute(id);
+  };
+};

@@ -8,5 +8,5 @@ export class DeleteGameUseCase {
     }
     execute(id: number) {
         return this.gameRepository.delete(id);
-    }
-}
+    };
+};

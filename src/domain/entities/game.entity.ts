@@ -24,4 +24,4 @@ export class Game {
 
     @Column({ type: 'float', nullable: true })
     rating: number;
-}
+};

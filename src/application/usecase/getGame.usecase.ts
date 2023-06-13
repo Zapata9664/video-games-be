@@ -6,8 +6,8 @@ import { GameRepository } from "../../domain/repositories";
 export class GetGamesUseCase {
 
     constructor(private gameRepository: GameRepository) {
-    }
+    };
     execute() {
         return this.gameRepository.findAll();
-    }
-}
+    };
+};

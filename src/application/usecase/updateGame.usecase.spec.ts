@@ -1,20 +1,20 @@
-import { CreateGameUseCase } from "./createGame.usecase";
+import { UpdateGameUseCase } from "./updateGame.usecase";
 import { RequiredFieldsException } from "../../exceptions";
 
 
 
-describe('CreateGameUseCase', () => {
+describe('UpdateGameUseCase', () => {
 
-    let createGameUseCase: CreateGameUseCase;
+    let upadateGameUseCase: UpdateGameUseCase;
 
     let gameRepository: any;
 
     beforeEach(() => {
 
         gameRepository = {
-            create: jest.fn()
+            update: jest.fn()
         };
-        createGameUseCase = new CreateGameUseCase(gameRepository);
+        upadateGameUseCase = new UpdateGameUseCase(gameRepository);
     });
 
     test('Should thrown RequiredFieldsException when name is missing ', () => {
@@ -26,11 +26,11 @@ describe('CreateGameUseCase', () => {
             rating: 5
         };
         try {
-            createGameUseCase.execute(game);
+            upadateGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
-        expect(gameRepository.create).not.toHaveBeenCalled();
+        expect(gameRepository.update).not.toHaveBeenCalled();
 
     });
 
@@ -44,11 +44,11 @@ describe('CreateGameUseCase', () => {
             rating: 5,
         };
         try {
-            createGameUseCase.execute(game);
+            upadateGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
-        expect(gameRepository.create).not.toHaveBeenCalled();
+        expect(gameRepository.update).not.toHaveBeenCalled();
 
     });
 
@@ -61,11 +61,11 @@ describe('CreateGameUseCase', () => {
             description: 'description'
         };
         try {
-            createGameUseCase.execute(game);
+            upadateGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
-        expect(gameRepository.create).not.toHaveBeenCalled();
+        expect(gameRepository.update).not.toHaveBeenCalled();
 
     });
 
@@ -79,11 +79,11 @@ describe('CreateGameUseCase', () => {
             price: 300
         };
         try {
-            createGameUseCase.execute(game);
+            upadateGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
-        expect(gameRepository.create).not.toHaveBeenCalled();
+        expect(gameRepository.update).not.toHaveBeenCalled();
 
     });
 
@@ -95,15 +95,15 @@ describe('CreateGameUseCase', () => {
             price: 300
         };
         try {
-            createGameUseCase.execute(game);
+            upadateGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
-        expect(gameRepository.create).not.toHaveBeenCalled();
+        expect(gameRepository.update).not.toHaveBeenCalled();
 
     });
 
-    test('Should create game when it sends correct fields ', () => {
+    test('Should update game when it sends correct fields ', () => {
         const game: any = {
             console: 'switch',
             name: 'mock',
@@ -111,9 +111,9 @@ describe('CreateGameUseCase', () => {
             description: 'description',
             price: 300
         };
-        createGameUseCase.execute(game);
+        upadateGameUseCase.execute(game);
 
-        expect(gameRepository.create).toHaveBeenCalledWith(game);
+        expect(gameRepository.update).toHaveBeenCalledWith(game);
 
     });
 

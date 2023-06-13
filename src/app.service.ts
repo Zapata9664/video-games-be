@@ -5,4 +5,4 @@ export class AppService {
   getGames(): any {
     return { name: 'Hello World!', token: 'token', };
   }
-}
+};

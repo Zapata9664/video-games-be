@@ -10,9 +10,9 @@ describe('GameRepository', () => {
     beforeEach(() => {
         repository = {
             save: jest.fn()
-        }
+        };
         gameRepository = new GameRepository(repository);
-    })
+    });
 
     describe('create', () => {
 
