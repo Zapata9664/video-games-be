@@ -34,10 +34,10 @@ https://docs.docker.com/desktop/install/linux-install/
 
 _Guia para correr el proyecto._
 
-_Crear imagen docker a partir del docker file._
+_Crear imagen docker a partir del docker-compose-yml._
 
 ```
-$ docker build
+$ docker-compose build
 ```
 
 ## Iniciar los contenedores.
@@ -88,7 +88,7 @@ Inicia sesion:
 
 _Paso 4_
 
-Dar click en start server he ingresar los siguientes datos:
+Dar click en "agregar nuevo servidor" he ingresar los siguientes datos:
 
     1. En la pestaña conexion: **IPADRESS**
     
