@@ -22,7 +22,7 @@ describe('GameController', () => {
             gameController.createGame(gameMock);
 
             // expect
-            expect(createGameUseCase.execute).toHaveBeenCalledWith(gameMock);
+             expect(createGameUseCase.execute).toHaveBeenCalledWith(gameMock);
 
         });
     });
