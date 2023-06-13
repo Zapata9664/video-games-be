@@ -1,7 +1,7 @@
 # Video Games
 
 
-## Comenzando 
+## Comenzando
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
@@ -30,7 +30,7 @@ https://docs.docker.com/desktop/install/linux-install/
 
 ```
 
-## Instalación 
+## Instalación
 
 _Guia para correr el proyecto._
 
@@ -51,7 +51,7 @@ $ docker compose up
 ## Conectar la base de datos Postgres en la Pgadmin.
 
 
-Obtener el IPAddress del container en el cual esta corriendo la base de datos
+Obtener el IPAddress del container en la cual esta corriendo la base de datos
 
 _Paso 1_
 
@@ -69,8 +69,15 @@ $ docker ps -a
 <img src="https://github.com/Zapata9664/video-games-be/blob/main/src/assets/dockerDesktopExample.png">
 
 _Paso 2_
+Ecnontrar el **IPAdress** del contenedor donde esta corriendo la base de datos:
 
-Despues de ingresar iniciar el proyecto [iniciar los contenedores](#iniciar los contenedores) 
+```
+$ docker inspect <IDContenedor>
+```
+
+_Paso 3_
+
+Despues de iniciar el proyecto:
 
 Ingresar a la direccion donde se localiza la pagina administradora
 
@@ -78,28 +85,28 @@ Ingresar a la direccion donde se localiza la pagina administradora
 http://localhost:5555/
 ```
 
-_Paso 3_
+_Paso 4_
 
 Inicia sesion:
 
     Usuario: "admin@admin.com"
-    
+
     Contraseña: admin
 
-_Paso 4_
+_Paso 5_
 
 Dar click en "agregar nuevo servidor" he ingresar los siguientes datos:
 
     1. En la pestaña conexion: **IPADRESS**
-    
+
     2. Usuario: postgres
-    
+
     3. Contraseña: postgres
 
 **NOTA**: Si desea cambiar el usuario o contraseña de la base de datos debe ingresar al archivo Dockerfile y cambiar los campos environment de postgres.
 
 
-## Visualizar la API como un documento Swagger.
+## Visualizar Swagger generado de la APi.
 
 ```
 http://localhost:3000/api
