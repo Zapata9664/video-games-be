@@ -44,7 +44,7 @@ describe('CreateGameUseCase', () => {
             rating: 5,
         };
         try {
-           await createGameUseCase.execute(game);
+            await createGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
@@ -103,7 +103,7 @@ describe('CreateGameUseCase', () => {
 
     });
 
-    test('Should create game when it sends correct fields ', async() => {
+    test('Should create game when it sends correct fields ', async () => {
         const game: any = {
             console: 'switch',
             name: 'mock',
@@ -111,11 +111,10 @@ describe('CreateGameUseCase', () => {
             description: 'description',
             price: 300
         };
-         await createGameUseCase.execute(game);
+        await createGameUseCase.execute(game);
 
         expect(gameRepository.create).toHaveBeenCalledWith(game);
 
     });
-
 });
 

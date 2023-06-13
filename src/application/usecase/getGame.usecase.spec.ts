@@ -11,8 +11,8 @@ describe('GetGamesUseCase', () => {
         };
         getGameUseCase = new GetGamesUseCase(gameRepository);
     });
-    test('Should show the games if they exist', () => {
-        getGameUseCase.execute();
+    test('Should show the games if they exist', async () => {
+        await getGameUseCase.execute();
         expect(gameRepository.findAll).toHaveBeenCalledWith();
     });
 });

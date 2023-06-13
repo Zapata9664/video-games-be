@@ -12,9 +12,9 @@ describe('GetGameBiIdUseCase', () => {
         getGameByIdUseCase = new GetGameByIdUseCase(gameRepository);
     });
 
-    test('Should show the specific game if the id exist', () => {
+    test('Should show the specific game if the id exist', async () => {
         const id: number = 2;
-        getGameByIdUseCase.execute(id);
+        await getGameByIdUseCase.execute(id);
 
         expect(gameRepository.findById).toBeCalledWith(id);
     });
