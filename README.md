@@ -40,7 +40,7 @@ _Crear imagen docker a partir del docker file._
 $ docker build
 ```
 
-## Iniciar los contenedores.##
+## Iniciar los contenedores.
 
 _inicia o crea los contenedores._
 
@@ -80,12 +80,14 @@ http://localhost:5555/
 _Paso 3_
 
 Inicia sesion:
+
     Usuario: "admin@admin.com"
     
     Contraseña: admin
 
 _Paso 4_
 Dar click en start server he ingresar los siguientes datos:
+
     1. En la pestaña conexion: **IPADRESS**
     
     2. Usuario: postgres
