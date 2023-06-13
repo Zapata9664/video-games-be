@@ -1,21 +1,21 @@
 import { GameController } from "./game.controller";
 
 
-describe('GameController', ()=> {
+describe('GameController', () => {
     let gameController: GameController;
 
-    let createGameUseCase: any  = {
+    let createGameUseCase: any = {
         execute: jest.fn()
     };
-    beforeEach(()=> {
+    beforeEach(() => {
         gameController = new GameController(createGameUseCase, {} as any, {} as any, {} as any, {} as any);
-    })
+    });
 
-    describe('createGames', ()=>{
-        test('Should call CreateGameUseCase when it creates game', ()=> {
+    describe('createGames', () => {
+        test('Should call CreateGameUseCase when it creates game', () => {
             // arrange
             const gameMock: any = {
-                    name: 'mock'
+                name: 'mock'
             };
 
             // act

@@ -17,7 +17,7 @@ describe('CreateGameUseCase', () => {
         createGameUseCase = new CreateGameUseCase(gameRepository);
     });
 
-    test('Should thrown RequiredFieldsException when name is missing ', () => {
+    test('Should thrown RequiredFieldsException when name is missing ', async () => {
         const game: any = {
             price: 3000,
             stock: 220,
@@ -26,7 +26,7 @@ describe('CreateGameUseCase', () => {
             rating: 5
         };
         try {
-            createGameUseCase.execute(game);
+            await createGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
@@ -35,7 +35,7 @@ describe('CreateGameUseCase', () => {
     });
 
 
-    test('Should thrown RequiredFieldsException when description is missing ', () => {
+    test('Should thrown RequiredFieldsException when description is missing ', async () => {
         const game: any = {
             name: 'mock',
             price: 3000,
@@ -44,7 +44,7 @@ describe('CreateGameUseCase', () => {
             rating: 5,
         };
         try {
-            createGameUseCase.execute(game);
+           await createGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
@@ -52,7 +52,7 @@ describe('CreateGameUseCase', () => {
 
     });
 
-    test('Should thrown RequiredFilesException when price is missing ', () => {
+    test('Should thrown RequiredFilesException when price is missing ', async () => {
         const game: any = {
             name: 'mock',
             stock: 220,
@@ -61,7 +61,7 @@ describe('CreateGameUseCase', () => {
             description: 'description'
         };
         try {
-            createGameUseCase.execute(game);
+            await createGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
@@ -70,7 +70,7 @@ describe('CreateGameUseCase', () => {
     });
 
 
-    test('Should thrown RequiredFilesException when stock is zero ', () => {
+    test('Should thrown RequiredFilesException when stock is zero ', async () => {
         const game: any = {
             console: 'switch',
             name: 'mock',
@@ -79,7 +79,7 @@ describe('CreateGameUseCase', () => {
             price: 300
         };
         try {
-            createGameUseCase.execute(game);
+            await createGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
@@ -87,7 +87,7 @@ describe('CreateGameUseCase', () => {
 
     });
 
-    test('Should thrown RequiredFilesException when console is missing ', () => {
+    test('Should thrown RequiredFilesException when console is missing ', async () => {
         const game: any = {
             name: 'mock',
             stock: 100,
@@ -95,7 +95,7 @@ describe('CreateGameUseCase', () => {
             price: 300
         };
         try {
-            createGameUseCase.execute(game);
+            await createGameUseCase.execute(game);
         } catch (e) {
             expect(e).toEqual(new RequiredFieldsException());
         };
@@ -103,7 +103,7 @@ describe('CreateGameUseCase', () => {
 
     });
 
-    test('Should create game when it sends correct fields ', () => {
+    test('Should create game when it sends correct fields ', async() => {
         const game: any = {
             console: 'switch',
             name: 'mock',
@@ -111,7 +111,7 @@ describe('CreateGameUseCase', () => {
             description: 'description',
             price: 300
         };
-        createGameUseCase.execute(game);
+         await createGameUseCase.execute(game);
 
         expect(gameRepository.create).toHaveBeenCalledWith(game);
 

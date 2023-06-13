@@ -1,18 +1,18 @@
 import { GetGameByIdUseCase } from "./getGameById.usecase";
 
 
-describe('GetGameBiIdUseCase', ()=> {
+describe('GetGameBiIdUseCase', () => {
     let getGameByIdUseCase: GetGameByIdUseCase;
     let gameRepository: any;
 
-    beforeEach(()=> {
+    beforeEach(() => {
         gameRepository = {
             findById: jest.fn()
         };
         getGameByIdUseCase = new GetGameByIdUseCase(gameRepository);
     });
 
-    test('Should show the specific game if the id exist',()=>{
+    test('Should show the specific game if the id exist', () => {
         const id: number = 2;
         getGameByIdUseCase.execute(id);
 

@@ -106,9 +106,23 @@ Dar click en "agregar nuevo servidor" he ingresar los siguientes datos:
 **NOTA**: Si desea cambiar el usuario o contraseña de la base de datos debe ingresar al archivo Dockerfile y cambiar los campos environment de postgres.
 
 
+## Correr las pruebas unitarias.
+
+```
+$ npm test
+```
+
+## Ver el porcentaje cubierto por las pruebas unitarias.
+```
+$ npm run test:cov
+```
+
+
 ## Visualizar Swagger generado de la APi.
 
 ```
 http://localhost:3000/api
 ```
+
+
 
