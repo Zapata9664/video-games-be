@@ -15,9 +15,9 @@ describe('DeleteGameUseCase', () => {
         deleteGameUseCase = new DeleteGameUseCase(gameRepository);
     });
 
-    test('Should delete a game when the ID exist', () => {
+    test('Should delete a game when the ID exist', async () => {
         const id: number = 2;
-        deleteGameUseCase.execute(id);
+        await deleteGameUseCase.execute(id);
 
         expect(gameRepository.delete).toHaveBeenCalledWith(id);
     });

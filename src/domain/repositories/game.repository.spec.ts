@@ -16,7 +16,7 @@ describe('GameRepository', () => {
 
     describe('create', () => {
 
-        test('should create game in repository ', () => {
+        test('should create game in repository ', async () => {
             const game: any = {
                 console: 'switch',
                 name: 'mock',
@@ -24,7 +24,7 @@ describe('GameRepository', () => {
                 description: 'description',
                 price: 300
             }
-            gameRepository.create(game);
+            await gameRepository.create(game);
 
             expect(repository.save).toBeCalledWith(game);
         });

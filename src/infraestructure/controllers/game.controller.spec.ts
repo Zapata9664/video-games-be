@@ -12,14 +12,14 @@ describe('GameController', () => {
     });
 
     describe('createGames', () => {
-        test('Should call CreateGameUseCase when it creates game', () => {
+        test('Should call CreateGameUseCase when it creates game', async () => {
             // arrange
             const gameMock: any = {
                 name: 'mock'
             };
 
             // act
-            gameController.createGame(gameMock);
+            await gameController.createGame(gameMock);
 
             // expect
              expect(createGameUseCase.execute).toHaveBeenCalledWith(gameMock);
