@@ -1,36 +1,36 @@
 # Video Games
 
 
-## Comenzando 🚀
+## Comenzando 
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
 
-### Pre-requisitos 📋
+## Pre-requisitos
 
 _Instalar Docker_
 
-## Guia para instalar docker en Mac
+### Guia para instalar docker en Mac
 
 ```
 https://docs.docker.com/desktop/install/mac-install/
 
 ```
 
-## Guia para instalar docker en Windows
+### Guia para instalar docker en Windows
 
 ```
 https://docs.docker.com/desktop/install/windows-install/
 
 ```
-## Guia para instalar docker en Linux
+### Guia para instalar docker en Linux
 
 ```
 https://docs.docker.com/desktop/install/linux-install/
 
 ```
 
-### Instalación 🔧
+## Instalación 
 
 _Guia para correr el proyecto._
 
