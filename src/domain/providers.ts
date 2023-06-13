@@ -8,4 +8,3 @@ export const Providers = [
     inject: ['DATA_SOURCE'],
   },
 ];
-

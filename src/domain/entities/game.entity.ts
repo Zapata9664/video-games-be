@@ -6,22 +6,22 @@ export class Game {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({type: 'text'})
+    @Column({ type: 'text' })
     name: string;
 
-    @Column({type: 'int' })
+    @Column({ type: 'int' })
     price: number;
 
-    @Column({type: 'int'})
+    @Column({ type: 'int' })
     stock: number;
 
-    @Column({type: 'text'})
+    @Column({ type: 'text' })
     description: string;
 
-    @Column({type: 'text'})
+    @Column({ type: 'text' })
     console: string;
 
 
-    @Column({type: 'float', nullable: true})
+    @Column({ type: 'float', nullable: true })
     rating: number;
 }

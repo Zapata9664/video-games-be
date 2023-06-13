@@ -1,14 +1,13 @@
 import { Injectable } from "@nestjs/common";
-import { GameRepository } from "src/dominio/repositories";
+import { GameRepository } from "../../domain/repositories";
 
 
 @Injectable()
 export class GetGamesUseCase {
 
-    constructor (private gameRepository: GameRepository){
+    constructor(private gameRepository: GameRepository) {
     }
-    
-    excecute (){
+    execute() {
         return this.gameRepository.findAll();
     }
 }

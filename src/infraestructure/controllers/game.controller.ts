@@ -1,33 +1,33 @@
-import { Controller, Get, Post, Body, Param, Put, Delete} from '@nestjs/common';
-import { CreateGameUseCase, GetGameByIdUseCase, GetGamesUseCase, UpdateGameUseCase, DeleteGameUseCase } from 'src/application/';
-import { Game } from 'src/dominio/entities';
+import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
+import { CreateGameUseCase, GetGameByIdUseCase, GetGamesUseCase, UpdateGameUseCase, DeleteGameUseCase } from '../../application';
+import { Game } from '../../domain/entities';
 
 @Controller('/game')
 export class GameController {
-  constructor(private readonly createGameUseCase: CreateGameUseCase, private readonly getGameByIdUseCase: GetGameByIdUseCase, private readonly updateGameUseCase: UpdateGameUseCase, private readonly getGameUseCase: GetGamesUseCase, private readonly deleteGamesUseCase: DeleteGameUseCase) {}
+  constructor(private readonly createGameUseCase: CreateGameUseCase, private readonly getGameByIdUseCase: GetGameByIdUseCase, private readonly updateGameUseCase: UpdateGameUseCase, private readonly getGameUseCase: GetGamesUseCase, private readonly deleteGamesUseCase: DeleteGameUseCase) { }
 
   @Post()
-  createGames(@Body() game: Game) {
-    return this.createGameUseCase.excecute(game);
+  createGame(@Body() game: Game) {
+    return this.createGameUseCase.execute(game);
   }
 
   @Get()
-   async getGames (){
-    return this.getGameUseCase.excecute();
-   }
+  async getGames() {
+    return this.getGameUseCase.execute();
+  }
 
   @Get('/:id')
-  async getGame (@Param('id') id: number) {
-    return this.getGameByIdUseCase.excecute(id)
+  async getGame(@Param('id') id: number) {
+    return this.getGameByIdUseCase.execute(id)
   }
 
   @Put()
-  async updateGame (@Body() game: Game) {
-    return this.updateGameUseCase.excecute(game)
+  async updateGame(@Body() game: Game) {
+    return this.updateGameUseCase.execute(game)
   }
 
   @Delete('/:id')
   async deteleGame(@Param('id') id: number) {
-    return this.deleteGamesUseCase.excecute(id)
+    return this.deleteGamesUseCase.execute(id)
   }
 }

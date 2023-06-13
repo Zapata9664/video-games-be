@@ -1,14 +1,14 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Game } from '../entities/game.entity';
-import { GameDoesNotExistException } from  '../../exceptions/gameDoesNotExist.exceptions';
+import { GameDoesNotExistException } from '../../exceptions/gameDoesNotExist.exceptions';
 
 @Injectable()
 export class GameRepository {
   constructor(
     @Inject('GAME_REPOSITORY')
     private gameRepository: Repository<Game>,
-  ) {}
+  ) { }
 
   async findAll(): Promise<Game[]> {
     return this.gameRepository.find();

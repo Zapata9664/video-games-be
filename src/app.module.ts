@@ -4,4 +4,4 @@ import { InfraestructureModule } from './infraestructure/infraestructure.module'
 @Module({
   imports: [InfraestructureModule]
 })
-export class AppModule {}
+export class AppModule { }

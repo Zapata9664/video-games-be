@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus } from "@nestjs/common";
 
 export class GameDoesNotExistException extends HttpException {
-    constructor () {
+    constructor() {
         super('the game does not exist', HttpStatus.BAD_REQUEST)
     }
 }

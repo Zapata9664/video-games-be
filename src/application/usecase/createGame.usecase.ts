@@ -1,19 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { RequiredFilesException } from '../../exceptions/requiredFields.exceptions';
-import { GameRepository } from '../../dominio/repositories/game.respository';
-import { Game } from '../../dominio/entities/game.entity';
+import { RequiredFieldsException } from '../../exceptions/requiredFields.exceptions';
+import { GameRepository } from '../../domain/repositories/game.respository';
+import { Game } from '../../domain/entities/game.entity';
 
 @Injectable()
 export class CreateGameUseCase {
-  constructor(private gameRepository: GameRepository) {}
+  constructor(private gameRepository: GameRepository) { }
 
-  excecute(game: Game) {
+  execute(game: Game) {
     if (!game.description || !game.console || !game.name || !game.price || !game.stock) {
-        throw new RequiredFilesException();
-      }
-      if (game.price <= 0 || game.stock <= 0) {
-        throw new RequiredFilesException();
-      }
+      throw new RequiredFieldsException();
+    }
+    if (game.price <= 0 || game.stock <= 0) {
+      throw new RequiredFieldsException();
+    }
     return this.gameRepository.create(game);
   }
 }

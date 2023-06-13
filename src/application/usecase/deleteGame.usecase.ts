@@ -1,15 +1,12 @@
 import { Injectable } from "@nestjs/common";
-import { GameRepository } from "src/dominio/repositories";
+import { GameRepository } from "../../domain/repositories";
 
 
 @Injectable()
 export class DeleteGameUseCase {
-
-    constructor (private gameRepository: GameRepository){
+    constructor(private gameRepository: GameRepository) {
     }
-
-    excecute (id: number){
-
+    execute(id: number) {
         return this.gameRepository.delete(id);
     }
 }

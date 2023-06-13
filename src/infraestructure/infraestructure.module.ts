@@ -8,4 +8,4 @@ import { GameController } from './controllers/game.controller';
   providers: [],
   exports: []
 })
-export class InfraestructureModule {}
+export class InfraestructureModule { }
