@@ -13,9 +13,16 @@ describe('GetGameBiIdUseCase', () => {
     });
 
     test('Should show the specific game if the id exist', async () => {
-        const id: number = 2;
-        await getGameByIdUseCase.execute(id);
+        const game: any = {
+            console: 'switch',
+            name: 'mock',
+            stock: 100,
+            description: 'description',
+            price: 300,
+            id: 1,
+        };
+        await getGameByIdUseCase.execute(game.id);
 
-        expect(gameRepository.findById).toBeCalledWith(id);
+        expect(gameRepository.findById).toBeCalledWith(game.id);
     });
 });

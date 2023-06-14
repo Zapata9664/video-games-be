@@ -3,6 +3,7 @@ import { RequiredFieldsException } from '../../exceptions/requiredFields.excepti
 import { GameRepository } from '../../domain/repositories/game.respository';
 import { Game } from '../../domain/entities/game.entity';
 
+
 @Injectable()
 export class CreateGameUseCase {
   constructor(private gameRepository: GameRepository) { }

@@ -4,8 +4,8 @@ import { GameRepository } from "../../domain/repositories";
 
 @Injectable()
 export class GetGameByIdUseCase {
-    constructor(private gameRepository: GameRepository) {
-    };
+    constructor(private gameRepository: GameRepository) { };
+
     execute(id: number) {
         return this.gameRepository.findById(id);
     };

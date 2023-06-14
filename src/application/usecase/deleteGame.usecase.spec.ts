@@ -16,9 +16,16 @@ describe('DeleteGameUseCase', () => {
     });
 
     test('Should delete a game when the ID exist', async () => {
-        const id: number = 2;
-        await deleteGameUseCase.execute(id);
+        const game: any = {
+            console: 'switch',
+            name: 'mock',
+            stock: 100,
+            description: 'description',
+            price: 300,
+            id: 1,
+        };
+        await deleteGameUseCase.execute(game.id);
 
-        expect(gameRepository.delete).toHaveBeenCalledWith(id);
+        expect(gameRepository.delete).toHaveBeenCalledWith(game.id);
     });
 });

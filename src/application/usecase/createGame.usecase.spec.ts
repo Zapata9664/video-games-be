@@ -2,7 +2,6 @@ import { CreateGameUseCase } from "./createGame.usecase";
 import { RequiredFieldsException } from "../../exceptions";
 
 
-
 describe('CreateGameUseCase', () => {
 
     let createGameUseCase: CreateGameUseCase;

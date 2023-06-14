@@ -1,5 +1,6 @@
 import { GetGamesUseCase } from "./getGame.usecase";
 
+
 describe('GetGamesUseCase', () => {
 
     let getGameUseCase: GetGamesUseCase;

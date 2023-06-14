@@ -2,7 +2,6 @@ import { UpdateGameUseCase } from "./updateGame.usecase";
 import { RequiredFieldsException } from "../../exceptions";
 
 
-
 describe('UpdateGameUseCase', () => {
 
     let upadateGameUseCase: UpdateGameUseCase;
@@ -33,7 +32,6 @@ describe('UpdateGameUseCase', () => {
         expect(gameRepository.update).not.toHaveBeenCalled();
 
     });
-
 
     test('Should thrown RequiredFieldsException when description is missing ', async () => {
         const game: any = {
@@ -68,7 +66,6 @@ describe('UpdateGameUseCase', () => {
         expect(gameRepository.update).not.toHaveBeenCalled();
 
     });
-
 
     test('Should thrown RequiredFilesException when stock is zero ', async () => {
         const game: any = {
