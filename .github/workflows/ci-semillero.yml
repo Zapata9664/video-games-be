@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: "Zapata9664/video-games-be"
+  IMAGE_NAME: "zapata9664/video-games-be"
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
