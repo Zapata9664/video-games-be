@@ -16,7 +16,8 @@ export class GameRepository {
 
   async findById(id: number) {
     const gameFiltered = await this.gameRepository.findOneBy({ id });
-    if (gameFiltered === null) {
+
+    if (!gameFiltered) {
       throw new GameDoesNotExistException();
     };
     return gameFiltered;

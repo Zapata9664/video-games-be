@@ -45,13 +45,20 @@ describe('GameRepository', () => {
             price: 300,
             id: 1,
         };
-        test('Should find a game if the id exits', async () => {
+        test('Should not find a game throw exception', async () => {
             try {
                 await gameRepository.findById(game.id)
             } catch (e) {
                 expect(e).toEqual(new GameDoesNotExistException());
             };
             expect(repository.findOneBy).not.toHaveBeenNthCalledWith(game.id);
+        });
+
+        test('Should  find a game and return', async () => {
+            repository.findOneBy = jest.fn().mockReturnValue(Promise.resolve(game.id));
+            await gameRepository.findById(game.id)
+
+            expect(repository.findOneBy).toBeCalledWith({"id": game.id});
         });
     });
 
@@ -74,9 +81,10 @@ describe('GameRepository', () => {
             id: 1,
         }
         test('Should delete a game if the id exits', async () => {
+            gameRepository.findById = jest.fn().mockReturnValue(Promise.resolve(game));
             await gameRepository.delete(game.id);
 
-            expect(repository.remove).toBeCalled();
+            expect(repository.remove).toBeCalledWith(game);
         });
     });
 
