@@ -23,7 +23,7 @@ jobs:
     - name: dependencias javascript
       run: "npm install"
     - name: Test and coverage
-      run: jest --coverage
+      run: npm run test:cov
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.9.1
     - name: SonarQube Quality Gate Check
