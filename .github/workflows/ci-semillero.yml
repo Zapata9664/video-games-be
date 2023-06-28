@@ -22,8 +22,8 @@ jobs:
         node-version: '18'
     - name: dependencias javascript
       run: "npm install"
-    - name: unit test javascript
-      run: "npm test"
+    - name: Test and coverage
+      run: jest --coverage
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.9.1
     - name: SonarQube Quality Gate Check
